@@ -1,0 +1,99 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estilos originales de Vite */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+.card {
+  padding: 2em;
+}
+.read-the-docs {
+  color: #888;
+}
+
+/* Nuevos estilos */
+.student-list {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.student-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.student-list li {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: #f0f0f0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.student-list button {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #646cff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.student-list button:hover {
+  background-color: #4e54c8;
+}
+
+.student-form {
+  margin-top: 2rem;
+}
+
+.student-form input {
+  margin: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.student-form button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #00b894;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.student-form button:hover {
+  background-color: #019875;
+}
