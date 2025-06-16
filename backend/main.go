@@ -26,7 +26,6 @@ func main() {
 
 	r := gin.Default()
 
-	// ✅ CORS habilitado para frontend en puerto 5173
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"http://localhost:5173"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
@@ -38,6 +37,15 @@ func main() {
 		var students []Student
 		db.Find(&students)
 		c.JSON(http.StatusOK, students)
+	})
+	r.GET("/students/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		var student Student
+		if err := db.First(&student, id).Error; err != nil {
+			c.JSON(http.StatusNotFound, gin.H{"error": "Student not found"})
+			return
+		}
+		c.JSON(http.StatusOK, student)
 	})
 
 	r.POST("/students", func(c *gin.Context) {

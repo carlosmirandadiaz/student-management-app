@@ -53,6 +53,11 @@ const StudentList: React.FC = () => {
     setGrade('');
   };
 
+  const handleDetails = async (id:number) => {
+    const res = await fetch(`${API_URL}/${id}`);
+    console.log("Student Details:", res);
+  }
+
   const handleDelete = async (id: number) => {
     await fetch(`${API_URL}/${id}`, {
       method: 'DELETE',
@@ -80,6 +85,9 @@ const StudentList: React.FC = () => {
                 setGrade(student.grade.toString());
               }}>
                 Edit
+              </button>
+              <button onClick={() => handleDetails(student.id)}>
+                Details
               </button>
               <button onClick={() => handleDelete(student.id)}>
                 Delete
